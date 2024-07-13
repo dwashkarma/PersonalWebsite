@@ -6,7 +6,7 @@ import Image from "next/image";
 
 function HeroSection() {
   return (
-    <div className="max-h-[90vh] text-slate-200 h-screen bg-secondary  flex flex-col gap-8 place-items-center justify-center">
+    <div className=" text-slate-200 h-screen bg-secondary  flex flex-col gap-4 md:gap-8 place-items-center justify-center">
       <Image
         className="rounded-full"
         src={"/dwas.jpg"}
@@ -14,10 +14,12 @@ function HeroSection() {
         height={200}
         width={200}
       />
-      <h1 className="text-6xl font-bold text-amber-600">
+      <h1 className="text-2xl md:text-6xl font-bold text-amber-600">
         Hi, I am Dwash Karma.
       </h1>
-      <p className="text-lg font-semibold">I am a Frontend Developer.</p>
+      <p className="text-md md:text-lg font-semibold">
+        I am a Frontend Developer.
+      </p>
       {/* //icons */}
       <div className="flex gap-4 text-2xl  ">
         <FaFacebook className="hover:text-slate-400" />
