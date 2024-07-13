@@ -6,7 +6,10 @@ import Image from "next/image";
 
 function HeroSection() {
   return (
-    <div className=" text-slate-200 h-screen bg-secondary  flex flex-col gap-4 md:gap-8 place-items-center justify-center">
+    <div
+      id="home"
+      className=" text-slate-200 h-screen bg-secondary  flex flex-col gap-4 md:gap-8 place-items-center justify-center"
+    >
       <Image
         className="rounded-full"
         src={"/dwas.jpg"}

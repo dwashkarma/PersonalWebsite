@@ -1,12 +1,24 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+
+const links = [
+  { name: "Home", path: "home" },
+  { name: "About", path: "about" },
+  { name: "Skills", path: "skills" },
+];
 
 function NavBar() {
   const [open, setOpen] = useState(false);
   const handleMenuOpen = () => {
     setOpen(!open);
+  };
+  const handleScroll = (e) => {
+    console.log(e);
+    const element = document.getElementById(e);
+    element.scrollIntoView({ behavior: "smooth", block: "center" });
   };
   return (
     <>
@@ -29,19 +41,35 @@ function NavBar() {
           <GiHamburgerMenu />
         </div>
         <div className="hidden md:flex gap-10">
-          <h2>Home</h2>
-          <h2>About</h2>
-          <h2>Education</h2>
-          <h2>Projects</h2>
+          {links.map((item) => {
+            return (
+              <span
+                key={item.name}
+                className="cursor-pointer"
+                onClick={() => handleScroll(item.path)}
+              >
+                {item.name}
+              </span>
+            );
+          })}
         </div>
       </div>
       {open && (
         <div className="sticky  flex flex-col  gap-4 top-0  h-screen w-screen bg-slate-300 px-5 pt-6  ">
           <div className="flex flex-col gap-5 text-xl font-semibold  ">
-            <h2>Home</h2>
-            <h2>About</h2>
-            <h2>Education</h2>
-            <h2>Projects</h2>
+            {links.map((item) => {
+              return (
+                <span
+                  key={item.name}
+                  onClick={() => {
+                    setOpen(!open);
+                    handleScroll(item.path);
+                  }}
+                >
+                  {item.name}
+                </span>
+              );
+            })}
           </div>
         </div>
       )}

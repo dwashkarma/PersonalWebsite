@@ -10,3 +10,7 @@
 body {
   background-color: rgb(226 232 240);
 }
+.title{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
