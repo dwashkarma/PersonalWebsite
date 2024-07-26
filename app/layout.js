@@ -8,7 +8,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Dwash Karma",
+  title: "Diwash Karma",
   description: "Dwash Karma's website",
 };
 
