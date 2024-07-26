@@ -1,29 +1,37 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const links = [
-  { name: "Home", path: "home" },
+  // { name: "Home", path: "home" },
   { name: "About", path: "about" },
   { name: "Skills", path: "skills" },
 ];
 
 function NavBar() {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
   const handleMenuOpen = () => {
     setOpen(!open);
   };
   const handleScroll = (e) => {
-    console.log(e);
     const element = document.getElementById(e);
     element.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+  const handleClick = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      router.push("/");
+    }
   };
   return (
     <>
       <div className=" bg-secondary relative  text-slate-200 sticky top-0  flex justify-between p-5 md:p-4 md:px-16 items-center">
-        <div>
+        <div onClick={() => handleClick("home")}>
           <Image
             src={"/dwas.jpg"}
             height={30}
