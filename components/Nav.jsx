@@ -16,10 +16,20 @@ function NavBar() {
   const handleMenuOpen = () => {
     setOpen(!open);
   };
-  const handleScroll = (e) => {
-    const element = document.getElementById(e);
-    element.scrollIntoView({ behavior: "smooth", block: "center" });
+
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      if (id === "projects") {
+        router.push(id);
+      } else {
+        router.push("/" + `#${id}`);
+      }
+    }
   };
+
   const handleClick = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -31,7 +41,7 @@ function NavBar() {
   return (
     <>
       <div className=" bg-textSecondary relative  text-slate-200 sticky top-0  flex justify-between p-5 md:p-4 md:px-16 items-center">
-        <div onClick={() => handleClick("home")}>
+        <div className="cursor-pointer" onClick={() => handleClick("home")}>
           <Image
             src={"/dwas.jpg"}
             height={30}
