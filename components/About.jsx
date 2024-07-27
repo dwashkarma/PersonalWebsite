@@ -6,7 +6,7 @@ function About() {
       id="about"
       className="text-center flex flex-col gap-5 mx-5 md:mx-40 mt-10"
     >
-      <h1 className="text-3xl font-bold text-secondary uppercase">About</h1>
+      <h1 className="text-3xl font-bold text-textSecondary uppercase">About</h1>
       <p>
         Hi, I&apos;m Dwash Karma, a passionate Frontend Developer with hands-on
         experience in creating dynamic and responsive web applications. With
@@ -14,7 +14,7 @@ function About() {
         internships at Wildstone Solution and Waterflow Technology Company.
       </p>
       <div className="flex flex-col gap-2">
-        <h2 className="title grid text-secondary">
+        <h2 className="title grid text-textSecondary">
           WildStone Solution Pvt.Ltd{" "}
           <span className="text-base text-green-800">(3 months)</span>
         </h2>
@@ -24,7 +24,7 @@ function About() {
         </p>
       </div>
       <div className="flex flex-col gap-2">
-        <h2 className="title grid text-secondary">
+        <h2 className="title grid text-textSecondary">
           Waterflow Technology Pvt.Ltd{" "}
           <span className="text-base text-green-800">(6 months)</span>
         </h2>

@@ -4,7 +4,7 @@ export default function Skills() {
       id="skills"
       className="text-slate-800 flex flex-col gap-5 text-start md:text-center py-10 mx-5"
     >
-      <h2 className="text-secondary font-bold uppercase text-3xl text-center">
+      <h2 className="text-textSecondary font-bold uppercase text-3xl text-center">
         Skills
       </h2>
       <div className="grid gap-2">

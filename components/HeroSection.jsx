@@ -9,7 +9,7 @@ function HeroSection() {
     <div id="particle-js">
       <div
         id="home"
-        className=" text-slate-200 h-screen bg-secondary  flex flex-col gap-4 md:gap-8 place-items-center justify-center"
+        className=" text-slate-200 h-screen bg-textSecondary  flex flex-col gap-4 md:gap-8 place-items-center justify-center"
       >
         <Image
           className="rounded-full"
@@ -32,7 +32,7 @@ function HeroSection() {
           <FaGithub className="hover:text-slate-400" />
         </div>
         <div>
-          <button className="bg-primary p-3 rounded-xl hover:bg-opacity-70">
+          <button className="bg-textPrimary p-3 rounded-xl hover:bg-opacity-70">
             <a className="text-base" download={"CV"} href="/Resume.pdf">
               Download CV
             </a>

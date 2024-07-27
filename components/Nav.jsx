@@ -5,7 +5,7 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const links = [
-  // { name: "Home", path: "home" },
+  { name: "Projects", path: "projects" },
   { name: "About", path: "about" },
   { name: "Skills", path: "skills" },
 ];
@@ -30,7 +30,7 @@ function NavBar() {
   };
   return (
     <>
-      <div className=" bg-secondary relative  text-slate-200 sticky top-0  flex justify-between p-5 md:p-4 md:px-16 items-center">
+      <div className=" bg-textSecondary relative  text-slate-200 sticky top-0  flex justify-between p-5 md:p-4 md:px-16 items-center">
         <div onClick={() => handleClick("home")}>
           <Image
             src={"/dwas.jpg"}
