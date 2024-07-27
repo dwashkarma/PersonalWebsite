@@ -8,7 +8,7 @@ function Projects() {
     setindex(index);
   };
   return (
-    <div className="pt-10   mx-40 flex flex-col gap-20 ">
+    <div className=" m-5  md:mx-40 flex flex-col md:gap-20 gap-10 ">
       <div className="flex justify-evenly title font-bold text-2xl uppercase">
         <h2
           className={`${
@@ -30,7 +30,7 @@ function Projects() {
       {index === 0 && (
         <>
           {/* Live Projects */}
-          <div className="flex justify-center gap-10">
+          <div className="flex flex-col md:flex-row place-items-center justify-center gap-10">
             <CardComponent
               title={"Waterflow Technology"}
               image={"/WFT.png"}
