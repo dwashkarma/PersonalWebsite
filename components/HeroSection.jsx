@@ -46,7 +46,7 @@ function HeroSection() {
           </Link>
 
           <Link
-            href={"https://www.facebook.com/profile.php?id=61553923613595"}
+            href={"https://www.linkedin.com/in/dwash-karma/"}
             aria-label="linkedin-link"
             target="_blank"
             rel="noopener noreferrer"
