@@ -19,8 +19,8 @@ function HeroSection() {
           height={200}
           width={200}
         />
-        <h1 className="text-2xl md:text-6xl font-bold text-amber-600">
-          Hi, I am Dwash Karma.
+        <h1 className="text-xl md:text-6xl font-bold text-amber-600">
+          Hi, I am Diwash Karmacharya.
         </h1>
         <p className="text-md md:text-lg font-semibold">
           I am a Frontend Developer.
