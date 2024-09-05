@@ -13,7 +13,7 @@ const poppins = Poppins({
 export const metadata = {
   title: "Diwash Karmacharya's Website",
   description:
-    "Hi, I'm Dwash Karma 🌐 Frontend Developer | Tech Enthusiast , Skills & Tools: Languages: JavaScript Frameworks & Libraries: React, Next.js, TanStack Query, Sveltejs Tools & Technologies:UI/UX, NPM package, Axios, WSO2 for role-based authentication ",
+    "Hi, I'm Diwash Karmacharya |Frontend Developer |Skills & Tools: Languages:JavaScript | Frameworks & Libraries: React, Next.js, TanStack Query, Sveltejs Tools & Technologies:UI/UX, NPM package",
   keywords: [
     "diwash",
     "karmacharya",
