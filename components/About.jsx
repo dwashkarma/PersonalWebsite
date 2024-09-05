@@ -6,7 +6,7 @@ function About() {
       id="about"
       className="text-center flex flex-col gap-5 mx-5 md:mx-40 mt-10"
     >
-      <h1 className="text-3xl font-bold text-textSecondary uppercase">About</h1>
+      <h2 className="text-3xl font-bold text-textSecondary uppercase">About</h2>
       <p>
         Hi, I&apos;m Dwash Karma, a passionate Frontend Developer with hands-on
         experience in creating dynamic and responsive web applications. With
@@ -33,7 +33,11 @@ function About() {
           Next.js. I was part of a team that built a complex finance project and
           website with SEO optimization. Gained knowledge in UI/UX and completed
           project.{" "}
-          <Link href={"/projects"} className="text-cyan-700 italic text-sm">
+          <Link
+            href={"/projects"}
+            aria-label="projects from diwash karmacharya"
+            className="text-cyan-700 italic text-sm"
+          >
             Projects
           </Link>
         </p>

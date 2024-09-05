@@ -3,6 +3,7 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 function HeroSection() {
   return (
@@ -26,14 +27,39 @@ function HeroSection() {
         </p>
         {/* //icons */}
         <div className="flex gap-4 text-2xl  ">
-          <FaFacebook className="hover:text-slate-400" />
-          <FaInstagram className="hover:text-slate-400" />
-          <FaLinkedin className="hover:text-slate-400" />
-          <FaGithub className="hover:text-slate-400" />
+          <Link
+            href={"https://www.facebook.com/profile.php?id=61553923613595"}
+            aria-label="facebook-link"
+          >
+            <FaFacebook className="hover:text-slate-400" />
+          </Link>
+
+          <Link
+            href={"https://www.instagram.com/dwashkarma/"}
+            aria-label="instagram-link"
+          >
+            <FaInstagram className="hover:text-slate-400" />
+          </Link>
+
+          <Link
+            href={"https://www.facebook.com/profile.php?id=61553923613595"}
+            aria-label="linkedin-link"
+          >
+            <FaLinkedin className="hover:text-slate-400" />
+          </Link>
+
+          <Link href={"https://github.com/dwashkarma"} aria-label="github-link">
+            <FaGithub className="hover:text-slate-400" />
+          </Link>
         </div>
         <div>
           <button className="bg-textPrimary p-3 rounded-xl hover:bg-opacity-70">
-            <a className="text-base" download={"CV"} href="/Resume.pdf">
+            <a
+              className="text-base"
+              aria-label="cv/resume"
+              download={"CV"}
+              href="/Resume.pdf"
+            >
               Download CV
             </a>
           </button>

@@ -11,8 +11,9 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Diwash Karmacharya",
-  description: "Dwash Karmacharya's portfolio website",
+  title: "Diwash Karmacharya's Website",
+  description:
+    "Hi, I'm Dwash Karma 🌐 Frontend Developer | Tech Enthusiast , Skills & Tools: Languages: JavaScript Frameworks & Libraries: React, Next.js, TanStack Query, Sveltejs Tools & Technologies:UI/UX, NPM package, Axios, WSO2 for role-based authentication ",
   keywords: [
     "diwash",
     "karmacharya",
@@ -28,6 +29,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/dwas.jpg" />
         <Metrics />
       </head>
       <body className={poppins.className}>
