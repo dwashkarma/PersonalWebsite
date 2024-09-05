@@ -5,4 +5,5 @@ export const openGraph = {
   sitename: "Diwash Karmacharya",
   type: "website",
   images: "/dwas.jpg",
+  logo: "/dwas.jpg",
 };
