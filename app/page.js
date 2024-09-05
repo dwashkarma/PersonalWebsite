@@ -4,9 +4,13 @@ import Skills from "@/components/Skills";
 export default function Home() {
   return (
     <div>
-      <HeroSection />
-      <About />
-      <Skills />
+      <main>
+        <HeroSection />
+      </main>
+      <article>
+        <About />
+        <Skills />
+      </article>
     </div>
   );
 }

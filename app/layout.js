@@ -2,6 +2,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/Nav";
 import Metrics from "@/components/Metrices";
+import { openGraph } from "./shared-metadata/opengraph";
+import { twitterCard } from "./shared-metadata/twittwer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -9,8 +11,17 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Diwash Karma",
-  description: "Dwash Karma's website",
+  title: "Diwash Karmacharya",
+  description: "Dwash Karmacharya's portfolio website",
+  keywords: [
+    "diwash",
+    "karmacharya",
+    "personal",
+    "website",
+    "diwashkarmacharya.com.np",
+  ],
+  openGraph: { ...openGraph },
+  twitter: { ...twitterCard },
 };
 
 export default function RootLayout({ children }) {
