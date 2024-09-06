@@ -46,7 +46,7 @@ function HeroSection() {
           </Link>
 
           <Link
-            href={"https://www.linkedin.com/in/dwash-karma/"}
+            href={"https://www.linkedin.com/in/diwashkarmacharya/"}
             aria-label="linkedin-link"
             target="_blank"
             rel="noopener noreferrer"
