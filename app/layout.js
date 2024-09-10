@@ -11,9 +11,9 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Diwash Karmacharya's Website",
+  title: "Diwash Karmacharya | Frontend Developer | JavaScript, React",
   description:
-    "Hi, I'm Diwash Karmacharya |Frontend Developer |Skills & Tools: Languages:JavaScript | Frameworks & Libraries: React, Next.js, TanStack Query, Sveltejs Tools & Technologies:UI/UX, NPM package",
+    "Hi, I'm Diwash Karmacharya, a Frontend Developer skilled in JavaScript, React, Next.js, TanStack Query, Svelte, and UI/UX. I also develop NPM packages and work with modern tools.",
   keywords: [
     "diwash",
     "karmacharya",
