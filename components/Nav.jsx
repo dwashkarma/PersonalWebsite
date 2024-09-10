@@ -51,7 +51,7 @@ function NavBar() {
             className="rounded-full "
           />
         </div>
-        <h2 className="text-xl md:hidden">Dwash</h2>
+        <p className="text-xl md:hidden">Dwash</p>
         <div
           className="flex gap-2 items-center md:hidden text-xl "
           onClick={handleMenuOpen}
