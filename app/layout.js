@@ -2,8 +2,9 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/Nav";
 import Metrics from "@/components/Metrices";
-import { openGraph } from "./shared-metadata/opengraph";
-import { twitterCard } from "./shared-metadata/twittwer";
+import { openGraph } from "../components/shared-metadata/opengraph";
+import { twitterCard } from "../components/shared-metadata/twittwer";
+import PersonSchema from "@/components/structured-data-schema/person";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <NavBar />
         {children}
+        <PersonSchema />
       </body>
     </html>
   );
