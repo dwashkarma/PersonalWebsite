@@ -23,6 +23,7 @@ export const metadata = {
   ],
   openGraph: { ...openGraph },
   twitter: { ...twitterCard },
+  robots: "index",
 };
 
 export default function RootLayout({ children }) {
