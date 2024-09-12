@@ -1,5 +1,6 @@
 "use client";
 import CardComponent from "@/components/ui/card";
+import { FaNpm } from "react-icons/fa";
 import { useState } from "react";
 
 function Projects() {
@@ -48,8 +49,15 @@ function Projects() {
       )}
       {index === 1 && (
         <>
-          <div className="text-center text-lg font-bold">
-            Updating Soon........
+          <div className="grid   place-content-center place-items-center grid-cols-1 ">
+            <CardComponent
+              title={"Tron UI"}
+              image={"/Npm-logo.svg"}
+              description={
+                "Ui-library is an open source react component library that implements new design's. It's comprehensive and can be used in production out of the box."
+              }
+              url={"https://www.npmjs.com/package/tron-ui"}
+            />{" "}
           </div>
         </>
       )}
