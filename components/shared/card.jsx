@@ -13,20 +13,22 @@ function CardComponent({ image, title, description, url }) {
   };
 
   return (
-    <div className="rounded-xl shadow-gray-300 shadow-md grid gap-4 items-center text-slate-800 p-8 w-[20rem] h-fit">
-      <div className="min-h-[12rem]">
+    <div className="rounded-xl shadow-gray-300 shadow border mt-8  gap-4 items-start text-slate-800 p-8 flex flex-col justify-start w-[20rem] h-[fit] min-h-[22rem]  ">
+      <div className="w-full flex justify-center items-center">
         <Image
           src={image}
-          height={500}
-          width={500}
-          objectFit="cover"
+          height={300}
+          width={300}
+          style={{ aspectRatio: 3 / 2 }}
+          className="object-contain"
+          loading="lazy"
           alt={title}
         />
       </div>
-      <h2 className="font-semibold text-lg">{title}</h2>
-      <p className="text-slate-800">{description}</p>
+      <h2 className="font-semibold text-lg ">{title}</h2>
+      <p className="text-slate-800 text-sm text-wrap">{description}</p>
       <div
-        className="z-10 flex items-center justify-end"
+        className="z-10 flex items-center justify-end w-full"
         onClick={() => handleVisit(url)}
       >
         <Suspense fallback={<p>Loading...</p>}>
