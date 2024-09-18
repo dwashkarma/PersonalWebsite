@@ -33,6 +33,7 @@ function Projects() {
           {projects.map((item, index) => {
             return (
               <CardComponent
+                key={index}
                 title={item.title}
                 image={item.image}
                 description={item.description.slice(0, 50) + "..."}
