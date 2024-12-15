@@ -68,7 +68,7 @@ function HeroSection() {
             <a
               className="text-base"
               aria-label="cv/resume"
-              download={"CV"}
+              download={"Resume"}
               href="/Resume.pdf"
             >
               Download CV
