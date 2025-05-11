@@ -40,8 +40,11 @@ function NavBar() {
   };
   return (
     <>
-      <div className=" bg-textSecondary relative  text-slate-200 sticky top-0  flex justify-between p-5 md:p-4 md:px-16 items-center">
-        <div className="cursor-pointer" onClick={() => handleClick("home")}>
+      <div className=" bg-textSecondary   text-slate-200 sticky top-0  flex justify-between p-5 md:p-4 md:px-16 items-center">
+        <div
+          className="cursor-pointer flex items-center gap-4"
+          onClick={() => handleClick("home")}
+        >
           <Image
             src={"/dwas.jpg"}
             height={30}
@@ -50,8 +53,11 @@ function NavBar() {
             alt="dwashKarma"
             className="rounded-full "
           />
+          <span className="hidden md:block font-semibold ">
+            Diwash Karmacharya
+          </span>
         </div>
-        <p className="text-xl md:hidden">Dwash</p>
+        <p className="text-xl md:hidden">Diwash.K</p>
         <div
           className="flex gap-2 items-center md:hidden text-xl "
           onClick={handleMenuOpen}

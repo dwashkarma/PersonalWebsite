@@ -4,6 +4,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { TypingAnimation } from "./magicui/typing-animation";
 
 function HeroSection() {
   return (
@@ -19,12 +20,15 @@ function HeroSection() {
           height={200}
           width={200}
         />
-        <h1 className="text-xl md:text-6xl font-bold text-amber-600">
-          Hi, I am Diwash Karmacharya.
+        <h1 className="text-xl md:text-6xl font-bold text-center flex md:flex-col lg:flex-row gap-2">
+          <span>Hi, I am </span> <span> Diwash Karmacharya.</span>
         </h1>
-        <p className="text-md md:text-lg font-semibold">
-          I am a Frontend Developer.
-        </p>
+        <div className="text-md md:text-4xl font-semibold flex gap-2 items-center h-6">
+          <span className=" font-bold">I am a</span>
+          <TypingAnimation className={" text-xl md:text-4xl text-amber-600"}>
+            Frontend Developer.
+          </TypingAnimation>
+        </div>
         {/* //icons */}
         <div className="flex gap-4 text-2xl  ">
           <Link
@@ -64,7 +68,7 @@ function HeroSection() {
           </Link>
         </div>
         <div>
-          <button className="bg-textPrimary p-3 rounded-xl hover:bg-opacity-70">
+          <button className="bg-black p-2 px-5 rounded-xl hover:bg-opacity-70">
             <a
               className="text-base"
               aria-label="cv/resume"

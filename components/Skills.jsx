@@ -26,13 +26,6 @@ export default function Skills() {
         </div>
       </div>
       <div className="grid gap-2">
-        <h3 className="font-bold text-xl">Backend </h3>
-        <div className="flex flex-col md:flex-row gap-2 md:gap-5 text-start md:justify-center">
-          <li>Nestjs</li>
-          <li>Nodejs</li>
-        </div>
-      </div>
-      <div className="grid gap-2">
         <h3 className="font-bold text-xl">CSS </h3>
         <div className="flex flex-col md:flex-row gap-2 md:gap-5 text-start md:justify-center">
           <li>TailwindCSS</li>
@@ -41,6 +34,16 @@ export default function Skills() {
           <li>Material UI</li>
           <li>Sadcn/UI</li>
         </div>
+      </div>
+      <div className="grid gap-2">
+        <h3 className="font-bold text-xl">Backend </h3>
+        <div className="flex flex-col md:flex-row gap-2 md:gap-5 text-start md:justify-center">
+          <li>Nestjs</li>
+          <li>Nodejs</li>
+        </div>
+      </div>
+      <div className="grid gap-2">
+        <h3 className="font-bold text-xl">Technical SEO </h3>
       </div>
     </div>
   );
