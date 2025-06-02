@@ -13,35 +13,43 @@ function CardComponent({ image, title, description, url }) {
   };
 
   return (
-    <div className="rounded-xl shadow-gray-300 shadow border mt-8  gap-4 items-start text-slate-800 p-8 flex flex-col justify-start w-[20rem] h-[fit] min-h-[22rem]  ">
-      <div className="w-full flex justify-center items-center">
+    <div
+      className="group relative rounded-2xl bg-white p-6 transition-all duration-300 ease-in-out
+                    hover:shadow-lg hover:-translate-y-1
+                    border  backdrop-blur-sm
+                    flex flex-col"
+    >
+      <div className="relative place-content-center place-items-center w-full aspect-square  overflow-hidden rounded-xl bg-gray-50">
         <Image
           src={image}
           height={300}
           width={300}
-          style={{ aspectRatio: 3 / 2 }}
-          className="object-contain"
+          className="object-contain transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
           alt={title}
         />
       </div>
-      <h2 className="font-semibold text-lg ">{title}</h2>
-      <p className="text-slate-800 text-sm text-wrap">{description}</p>
-      <div
-        className="z-10 flex items-center justify-end w-full"
-        onClick={() => handleVisit(url)}
-      >
-        <Suspense fallback={<p>Loading...</p>}>
-          <div
-            className={cn(
-              "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
-            )}
+      <h2 className="font-bold text-xl text-gray-800 mb-3 group-hover:text-amber-600 transition-colors">
+        {title}
+      </h2>
+      <p className="text-gray-600 text-sm flex-grow">{description}</p>
+      <div className="mt-6">
+        <Suspense
+          fallback={<p className="text-sm text-gray-500">Loading...</p>}
+        >
+          <button
+            onClick={() => handleVisit(url)}
+            className="group/btn w-full rounded-xl bg-muted p-3 transition-all duration-300
+                     hover:bg-amber-600 border border-gray-100 hover:border-amber-600"
           >
-            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-              ✨<span>Visit</span>
-              <ArrowRight />
+            <AnimatedShinyText
+              className="inline-flex items-center justify-center gap-2 text-gray-600
+                         group-hover/btn:text-white transition-colors"
+            >
+              <span className="font-medium">Visit Project</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
             </AnimatedShinyText>
-          </div>
+          </button>
         </Suspense>
       </div>
     </div>

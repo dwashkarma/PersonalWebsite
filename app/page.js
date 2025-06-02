@@ -10,7 +10,7 @@ export default function Home() {
       <main>
         <HeroSection />
       </main>
-      <article className="grid justify-between  grid-cols-1 xl:grid-cols-2 gap-6 px-10 md:p-20  ">
+      <article className="grid justify-between  grid-cols-1 xl:grid-cols-2 gap-6 mx-10 md:mx-40  ">
         <About />
 
         <Skills />

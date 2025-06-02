@@ -4,9 +4,11 @@ function About() {
   return (
     <div
       id="about"
-      className="text-pretty  flex flex-col gap-5 basis-1/2 mt-10"
+      className="text-pretty  flex flex-col gap-10 basis-1/2 mt-10"
     >
-      <h2 className="text-3xl font-bold text-textSecondary uppercase">About</h2>
+      <h2 className="text-3xl font-bold text-textSecondary uppercase text-center md:text-start">
+        About
+      </h2>
       <p>
         Hi, I&apos;m Diwash Karmacharya, a passionate Frontend Developer with
         hands-on experience in creating dynamic and responsive web applications.
@@ -14,7 +16,7 @@ function About() {
         internships and an associate position, where I&apos;ve contributed to
         building scalable, secure, and user-focused digital solutions.
       </p>
-      <h2 className="text-3xl font-bold text-textSecondary uppercase">
+      <h2 className="text-3xl font-bold text-textSecondary uppercase text-center md:text-start">
         {" "}
         Professional Experience
       </h2>

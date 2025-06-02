@@ -3,6 +3,13 @@ import CardComponent from "@/components/shared/card";
 
 const projects = [
   {
+    title: "KamKaaz",
+    image: "/kamkaaz.png",
+    description:
+      "Kamkaaz - One Platform. Two Solutions. Endless Opportunities.",
+    url: "https://play.google.com/store/apps/details?id=com.dwashkarma.kamkaaz",
+  },
+  {
     title: "Waterflow Technology",
     image: "/WFT.png",
     description:
@@ -26,25 +33,23 @@ const projects = [
 ];
 function Projects() {
   return (
-    <div className="mt-6">
+    <div className="mt-6 flex flex-col gap-10">
       {" "}
       <h2 className="text-3xl font-bold text-textSecondary uppercase text-center">
         Projects
       </h2>
-      <div className=" m-5  md:mx-40 flex flex-col md:gap-20 gap-10 ">
-        <div className="flex flex-col md:flex-row place-items-center justify-center gap-10">
-          {projects.map((item, index) => {
-            return (
-              <CardComponent
-                key={index}
-                title={item.title}
-                image={item.image}
-                description={item.description.slice(0, 50) + "..."}
-                url={item.url}
-              />
-            );
-          })}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 mx-10 md:mx-20 lg:mx-40">
+        {projects.map((item, index) => {
+          return (
+            <CardComponent
+              key={index}
+              title={item.title}
+              image={item.image}
+              description={item.description.slice(0, 50) + "..."}
+              url={item.url}
+            />
+          );
+        })}
       </div>
     </div>
   );
