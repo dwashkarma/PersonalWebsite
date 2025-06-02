@@ -2,6 +2,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { TypingAnimation } from "./magicui/typing-animation";
@@ -68,16 +69,15 @@ function HeroSection() {
           </Link>
         </div>
         <div>
-          <button className="bg-black p-2 px-5 rounded-xl hover:bg-opacity-70">
-            <a
-              className="text-base"
-              aria-label="cv/resume"
-              download={"Resume"}
-              href="/Resume.pdf"
-            >
-              Download CV
-            </a>
-          </button>
+          <a
+            className="group flex items-center gap-2 bg-amber-600 text-white py-3 px-6 rounded-full transition-all duration-300 hover:bg-amber-700  hover:shadow-amber-600/25"
+            aria-label="cv/resume"
+            download={"Resume"}
+            href="/Resume.pdf"
+          >
+            <span className="text-base font-semibold">Download CV</span>
+            <FaDownload className="text-sm transition-transform group-hover:translate-y-0.5 " />
+          </a>
         </div>
       </div>
     </div>
