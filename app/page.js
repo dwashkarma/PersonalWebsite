@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Education from "@/components/Education";
 import HeroSection from "@/components/HeroSection";
 import Projects from "@/components/projects";
 import Skills from "@/components/Skills";
@@ -10,10 +11,12 @@ export default function Home() {
       <main>
         <HeroSection />
       </main>
-      <article className="grid justify-between  grid-cols-1 xl:grid-cols-2 gap-6 mx-10 md:mx-40  ">
+      <article className="grid justify-between grid-cols-1 xl:grid-cols-2 gap-6 mx-10 md:mx-40">
         <About />
-
-        <Skills />
+        <div className="flex flex-col">
+          <Skills />
+          <Education />
+        </div>
       </article>
 
       <article>
