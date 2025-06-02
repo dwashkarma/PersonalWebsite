@@ -2,8 +2,10 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { TypingAnimation } from "./magicui/typing-animation";
 
 function HeroSection() {
   return (
@@ -19,14 +21,34 @@ function HeroSection() {
           height={200}
           width={200}
         />
-        <h1 className="text-xl md:text-6xl font-bold text-amber-600">
-          Hi, I am Diwash Karmacharya.
+        <h1 className="text-xl md:text-6xl font-bold text-center flex md:flex-col lg:flex-row gap-2">
+          <span>Hi, I am </span> <span> Diwash Karmacharya.</span>
         </h1>
-        <p className="text-md md:text-lg font-semibold">
-          I am a Frontend Developer.
-        </p>
+        <div className="text-md md:text-4xl font-semibold flex gap-2 items-center h-6">
+          <span className=" font-bold">I am a</span>
+          <TypingAnimation className={" text-xl md:text-4xl text-amber-600"}>
+            Frontend Developer.
+          </TypingAnimation>
+        </div>
         {/* //icons */}
         <div className="flex gap-4 text-2xl  ">
+          <Link
+            href={"https://github.com/dwashkarma"}
+            aria-label="github-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="hover:text-slate-400" />
+          </Link>
+          <Link
+            href={"https://www.linkedin.com/in/diwashkarmacharya/"}
+            aria-label="linkedin-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="hover:text-slate-400" />
+          </Link>
+
           <Link
             href={"https://www.facebook.com/profile.php?id=61553923613595"}
             aria-label="facebook-link"
@@ -44,36 +66,17 @@ function HeroSection() {
           >
             <FaInstagram className="hover:text-slate-400" />
           </Link>
-
-          <Link
-            href={"https://www.linkedin.com/in/diwashkarmacharya/"}
-            aria-label="linkedin-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin className="hover:text-slate-400" />
-          </Link>
-
-          <Link
-            href={"https://github.com/dwashkarma"}
-            aria-label="github-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub className="hover:text-slate-400" />
-          </Link>
         </div>
         <div>
-          <button className="bg-textPrimary p-3 rounded-xl hover:bg-opacity-70">
-            <a
-              className="text-base"
-              aria-label="cv/resume"
-              download={"Resume"}
-              href="/Resume.pdf"
-            >
-              Download CV
-            </a>
-          </button>
+          <a
+            className="group flex items-center gap-2 bg-amber-600 text-white py-3 px-6 rounded-full transition-all duration-300 hover:bg-amber-700  hover:shadow-amber-600/25"
+            aria-label="cv/resume"
+            download={"Resume"}
+            href="/Resume.pdf"
+          >
+            <span className="text-base font-semibold">Download CV</span>
+            <FaDownload className="text-sm transition-transform group-hover:translate-y-0.5 " />
+          </a>
         </div>
       </div>
     </div>

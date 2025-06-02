@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/Nav";
+import Footer from "@/components/Footer";
 import Metrics from "@/components/Metrices";
 import { openGraph } from "../components/shared-metadata/opengraph";
 import { twitterCard } from "../components/shared-metadata/twittwer";
@@ -40,7 +41,8 @@ export default function RootLayout({ children }) {
       </head>
       <body className={poppins.className}>
         <NavBar />
-        {children}
+        <main className="min-h-screen">{children}</main>
+        <Footer />
         <PersonSchema />
       </body>
     </html>
