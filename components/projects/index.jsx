@@ -26,8 +26,11 @@ const projects = [
 ];
 function Projects() {
   return (
-    <>
-      <BreadCrumb />
+    <div className="mt-6">
+      {" "}
+      <h2 className="text-3xl font-bold text-textSecondary uppercase text-center">
+        Projects
+      </h2>
       <div className=" m-5  md:mx-40 flex flex-col md:gap-20 gap-10 ">
         <div className="flex flex-col md:flex-row place-items-center justify-center gap-10">
           {projects.map((item, index) => {
@@ -43,7 +46,7 @@ function Projects() {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

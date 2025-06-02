@@ -40,7 +40,7 @@ function NavBar() {
   };
   return (
     <>
-      <div className=" bg-textSecondary   text-slate-200 sticky top-0  flex justify-between p-5 md:p-4 md:px-16 items-center">
+      <div className=" bg-textSecondary z-50   text-slate-200 sticky top-0  flex justify-between p-5 md:p-4 md:px-16 items-center">
         <div
           className="cursor-pointer flex items-center gap-4"
           onClick={() => handleClick("home")}
