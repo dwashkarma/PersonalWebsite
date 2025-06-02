@@ -43,33 +43,24 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-textSecondary text-slate-200 py-8">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <h3 className="text-xl font-semibold mb-2">Diwash Karmacharya</h3>
-            <p className="text-slate-400">Full Stack Developer</p>
-          </div>
-
-          <div className="flex flex-col items-center md:items-end">
-            <div className="flex space-x-4 mb-4">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:transform hover:scale-110 transition-transform"
-                  aria-label={link.name}
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </div>
-            <p className="text-sm text-slate-400">
-              © {currentYear} All rights reserved.
-            </p>
-          </div>
+    <footer className="bg-textSecondary text-slate-200 p-8 py-4 ">
+      <div className="flex flex-col  md:flex-row gap-2  justify-between items-center mx-10 md:mx-20">
+        <p className="text-sm text-slate-400">
+          © {currentYear} All rights reserved.
+        </p>
+        <div className="flex space-x-4 ">
+          {socialLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:transform hover:scale-110 transition-transform"
+              aria-label={link.name}
+            >
+              {link.icon}
+            </a>
+          ))}
         </div>
       </div>
     </footer>

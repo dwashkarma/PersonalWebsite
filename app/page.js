@@ -20,7 +20,7 @@ export default function Home() {
         <Projects />
       </article>
 
-      <article className="mx-10 md:mx-40">
+      <article className="mx-10 md:mx-20 lg:mx-40">
         <BlogSection />
       </article>
     </div>
