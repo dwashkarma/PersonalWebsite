@@ -33,7 +33,7 @@ const projects = [
 ];
 function Projects() {
   return (
-    <div className="mt-6 flex flex-col gap-10">
+    <div id="projects" className="mt-6 flex flex-col gap-10">
       {" "}
       <h2 className="text-3xl font-bold text-textSecondary uppercase text-center">
         Projects

@@ -33,6 +33,23 @@ function HeroSection() {
         {/* //icons */}
         <div className="flex gap-4 text-2xl  ">
           <Link
+            href={"https://github.com/dwashkarma"}
+            aria-label="github-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="hover:text-slate-400" />
+          </Link>
+          <Link
+            href={"https://www.linkedin.com/in/diwashkarmacharya/"}
+            aria-label="linkedin-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="hover:text-slate-400" />
+          </Link>
+
+          <Link
             href={"https://www.facebook.com/profile.php?id=61553923613595"}
             aria-label="facebook-link"
             target="_blank"
@@ -48,24 +65,6 @@ function HeroSection() {
             rel="noopener noreferrer"
           >
             <FaInstagram className="hover:text-slate-400" />
-          </Link>
-
-          <Link
-            href={"https://www.linkedin.com/in/diwashkarmacharya/"}
-            aria-label="linkedin-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin className="hover:text-slate-400" />
-          </Link>
-
-          <Link
-            href={"https://github.com/dwashkarma"}
-            aria-label="github-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub className="hover:text-slate-400" />
           </Link>
         </div>
         <div>

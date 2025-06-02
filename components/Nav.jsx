@@ -20,13 +20,14 @@ function NavBar() {
   const handleScroll = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "center" });
-    } else {
-      if (id === "projects") {
-        router.push(id);
-      } else {
-        router.push("/" + `#${id}`);
-      }
+      const offset = 100; // Adjust this value to control the scroll position
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
 

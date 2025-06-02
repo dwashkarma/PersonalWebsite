@@ -2,11 +2,11 @@ import About from "@/components/About";
 import HeroSection from "@/components/HeroSection";
 import Projects from "@/components/projects";
 import Skills from "@/components/Skills";
-import Blog from "@/app/components/Blog";
+import BlogSection from "@/components/BlogSection";
 
 export default function Home() {
   return (
-    <div>
+    <div className="gap-10 flex flex-col pb-10">
       <main>
         <HeroSection />
       </main>
@@ -20,8 +20,8 @@ export default function Home() {
         <Projects />
       </article>
 
-      <article>
-        <Blog />
+      <article className="mx-10 md:mx-40">
+        <BlogSection />
       </article>
     </div>
   );
