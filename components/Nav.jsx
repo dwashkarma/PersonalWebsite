@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
 
 const links = [
   { name: "Projects", path: "projects" },
   { name: "About", path: "about" },
   { name: "Skills", path: "skills" },
+  { name: "Contact", path: "contact" },
 ];
 
 function NavBar() {
@@ -16,27 +18,57 @@ function NavBar() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const router = useRouter();
 
-  useEffect(() => {
-    const controlNavbar = () => {
-      const currentScrollY = window.scrollY;
+  const controlNavbar = useCallback(() => {
+    if (typeof window === "undefined") return;
 
-      if (currentScrollY < lastScrollY || currentScrollY < 50) {
-        // Scrolling UP or at top of page
+    const currentScrollY = window.scrollY;
+    const scrollingUp = currentScrollY < lastScrollY;
+    const atTop = currentScrollY < 50;
+    const scrollDelta = Math.abs(currentScrollY - lastScrollY);
+
+    // Only trigger hide/show for significant scroll amounts
+    if (scrollDelta > 10) {
+      if (scrollingUp || atTop) {
         setVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling DOWN and not at top
+      } else {
         setVisible(false);
+        // Close mobile menu when scrolling down
+        setOpen(false);
       }
+    }
 
-      setLastScrollY(currentScrollY);
+    setLastScrollY(currentScrollY);
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    let timeoutId;
+    const handleScroll = () => {
+      // Debounce the scroll event
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(controlNavbar, 10);
     };
 
-    window.addEventListener("scroll", controlNavbar);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", controlNavbar);
+      if (timeoutId) clearTimeout(timeoutId);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, [controlNavbar]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [open]);
 
   const handleMenuOpen = () => {
     setOpen(!open);
@@ -53,6 +85,8 @@ function NavBar() {
         top: offsetPosition,
         behavior: "smooth",
       });
+      // Close mobile menu after clicking a link
+      setOpen(false);
     }
   };
 
@@ -60,6 +94,7 @@ function NavBar() {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "center" });
+      setOpen(false);
     } else {
       router.push("/");
     }
@@ -68,7 +103,7 @@ function NavBar() {
   return (
     <>
       <div
-        className={`bg-textSecondary z-50 text-slate-200 sticky top-0 flex justify-between p-5 md:p-4 md:px-16 items-center transition-transform duration-300 ${
+        className={`bg-textSecondary z-50 text-slate-200 fixed w-full top-0 flex justify-between p-5 md:p-4 md:px-16 items-center transition-all duration-300 ${
           visible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -89,49 +124,58 @@ function NavBar() {
           </span>
         </div>
         <p className="text-xl md:hidden">Diwash.K</p>
-        <div
-          className="flex gap-2 items-center md:hidden text-xl"
+        <button
+          className="flex items-center justify-center md:hidden text-2xl p-2 hover:bg-white/10 rounded-lg transition-colors"
           onClick={handleMenuOpen}
+          aria-label={open ? "Close menu" : "Open menu"}
         >
-          <GiHamburgerMenu />
-        </div>
-        <div className="hidden md:flex gap-10">
-          {links.map((item) => {
-            return (
-              <span
-                key={item.name}
-                className="cursor-pointer"
-                onClick={() => handleScroll(item.path)}
-              >
-                {item.name}
-              </span>
-            );
-          })}
+          {open ? <IoMdClose /> : <GiHamburgerMenu />}
+        </button>
+        <nav className="hidden md:flex gap-10">
+          {links.map((item) => (
+            <button
+              key={item.name}
+              className="cursor-pointer hover:text-amber-400 transition-colors"
+              onClick={() => handleScroll(item.path)}
+            >
+              {item.name}
+            </button>
+          ))}
+        </nav>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 md:hidden ${
+          open ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setOpen(false)}
+      />
+      <div
+        className={`fixed right-0 top-0 h-screen w-64 bg-textSecondary z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col gap-6 p-6 ">
+          <div className="flex justify-end">
+            <IoMdClose
+              className="size-7 cursor-pointer text-white"
+              onClick={() => setOpen(false)}
+            />
+          </div>
+          {links.map((item) => (
+            <button
+              key={item.name}
+              className="text-slate-200 text-lg font-medium hover:text-amber-400 transition-colors text-left"
+              onClick={() => {
+                handleScroll(item.path);
+              }}
+            >
+              {item.name}
+            </button>
+          ))}
         </div>
       </div>
-      {open && (
-        <div
-          className={`sticky flex flex-col gap-4 top-0 h-screen w-screen bg-slate-300 px-5 pt-6 transition-transform duration-300 ${
-            visible ? "translate-y-0" : "-translate-y-full"
-          }`}
-        >
-          <div className="flex flex-col gap-5 text-xl font-semibold">
-            {links.map((item) => {
-              return (
-                <span
-                  key={item.name}
-                  onClick={() => {
-                    setOpen(!open);
-                    handleScroll(item.path);
-                  }}
-                >
-                  {item.name}
-                </span>
-              );
-            })}
-          </div>
-        </div>
-      )}
     </>
   );
 }
