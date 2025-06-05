@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import Projects from "@/components/projects";
 import Skills from "@/components/Skills";
 import BlogSection from "@/components/BlogSection";
+import Contact from "@/components/contact-me";
 
 export default function Home() {
   return (
@@ -23,8 +24,9 @@ export default function Home() {
         <Projects />
       </article>
 
-      <article className="mx-10 md:mx-20 lg:mx-40">
+      <article className="flex flex-col gap-10 mx-10 md:mx-20 lg:mx-40">
         <BlogSection />
+        <Contact />
       </article>
     </div>
   );
