@@ -9,18 +9,32 @@ export default function BlogCard({ url }) {
   const [metadata, setMetadata] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [retryCount, setRetryCount] = useState(0);
+  const MAX_RETRIES = 5;
+  const RETRY_DELAY = 1000; // 1 second delay between retries
 
-  async function fetchOgData() {
+  async function fetchOgData(attempt = 1) {
     try {
       const res = await axios.get(`/api/og?url=${encodeURIComponent(url)}`);
       setMetadata(res.data);
-    } catch (err) {
-      console.error("Failed to fetch OG data:", err);
-      setError(err.message);
-    } finally {
+      setError(null);
       setLoading(false);
+    } catch (err) {
+      console.error(`Failed to fetch OG data (attempt ${attempt}):`, err);
+
+      if (attempt < MAX_RETRIES) {
+        setRetryCount(attempt);
+        // Wait for RETRY_DELAY milliseconds before retrying
+        setTimeout(() => {
+          fetchOgData(attempt + 1);
+        }, RETRY_DELAY);
+      } else {
+        setError(`Error getting og metadata for ${url}`);
+        setLoading(false);
+      }
     }
   }
+
   useEffect(() => {
     fetchOgData();
   }, [url]);
@@ -32,13 +46,23 @@ export default function BlogCard({ url }) {
         <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
         <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
         <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+        {retryCount > 0 && (
+          <div className="mt-4 text-amber-600 text-sm text-center">
+            Retrying... Attempt {retryCount} of {MAX_RETRIES}
+          </div>
+        )}
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="text-red-500">Error loading blog metadata: {error}</div>
+      <div className="rounded-2xl bg-red-50 p-6 border border-red-100">
+        <div className="text-red-500 text-center">
+          <p className="font-medium mb-2">Failed to load blog metadata</p>
+          <p className="text-sm">{error}</p>
+        </div>
+      </div>
     );
   }
 
