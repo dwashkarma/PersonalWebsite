@@ -14,6 +14,7 @@ export default function BlogCard({ url }) {
   const RETRY_DELAY = 1000; // 1 second delay between retries
 
   async function fetchOgData(attempt = 1) {
+    setLoading(true);
     try {
       const res = await axios.get(`/api/og?url=${encodeURIComponent(url)}`);
       setMetadata(res.data);
@@ -57,10 +58,16 @@ export default function BlogCard({ url }) {
 
   if (error) {
     return (
-      <div className="rounded-2xl bg-red-50 p-6 border border-red-100">
-        <div className="text-red-500 text-center">
+      <div className="rounded-2xl bg-red-50 p-6 border border-red-100 h-full justify-center items-center ">
+        <div className="text-red-500 text-center flex flex-col  ">
           <p className="font-medium mb-2">Failed to load blog metadata</p>
           <p className="text-sm">{error}</p>
+          <button
+            className="border p-2 px-4 rounded bg-destructive text-white"
+            onClick={fetchOgData}
+          >
+            Retry
+          </button>
         </div>
       </div>
     );

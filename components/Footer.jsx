@@ -4,6 +4,8 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedin,
+  FaMediumM,
+  FaNpm,
   FaTwitter,
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -22,23 +24,23 @@ const Footer = () => {
     {
       name: "LinkedIn",
       icon: (
-        <FaLinkedin className="text-2xl hover:text-blue-400 transition-colors" />
+        <FaLinkedin className="text-2xl hover:text-gray-400 transition-colors" />
       ),
       url: "https://linkedin.com/in/dwashkarma", // Replace with your LinkedIn URL
     },
     {
-      name: "Instagram",
+      name: "NPM",
       icon: (
-        <FaInstagram className="text-2xl hover:text-blue-500 transition-colors" />
+        <FaNpm className="text-2xl hover:text-gray-500 transition-colors" />
       ),
-      url: "https://www.instagram.com/dwashkarma/", // Replace with your Twitter URL
+      url: "https://www.npmjs.com/~dwash-karma-org", // Replace with your Twitter URL
     },
     {
       name: "Facebook",
       icon: (
-        <FaFacebook className="text-2xl hover:text-blue-500 transition-colors" />
+        <FaMediumM className="text-2xl hover:text-gray-500 transition-colors" />
       ),
-      url: "https://www.facebook.com/profile.php?id=61553923613595", // Replace with your Twitter URL
+      url: "https://medium.com/@dwashkarma", // Replace with your Twitter URL
     },
   ];
 
