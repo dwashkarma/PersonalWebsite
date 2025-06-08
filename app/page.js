@@ -26,8 +26,8 @@ export default function Home() {
 
       <article className="flex flex-col gap-10 mx-10 md:mx-20 lg:mx-40">
         <BlogSection />
-        <Contact />
       </article>
+      <Contact />
     </div>
   );
 }

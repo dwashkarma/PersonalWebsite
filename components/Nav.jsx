@@ -6,9 +6,9 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 
 const links = [
-  { name: "Projects", path: "projects" },
   { name: "About", path: "about" },
-  { name: "Skills", path: "skills" },
+  { name: "Projects", path: "projects" },
+  { name: "Blogs", path: "blogs" },
   { name: "Contact", path: "contact" },
 ];
 

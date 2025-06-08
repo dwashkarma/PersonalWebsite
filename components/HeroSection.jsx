@@ -1,5 +1,4 @@
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa6";
+import { FaMediumM, FaNpm } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
@@ -37,34 +36,39 @@ function HeroSection() {
             aria-label="github-link"
             target="_blank"
             rel="noopener noreferrer"
+            title="Github"
           >
-            <FaGithub className="hover:text-slate-400" />
+            <FaGithub className=" hover:scale-125 transition-all transform hover:-translate-y-1 delay-150 " />
           </Link>
           <Link
             href={"https://www.linkedin.com/in/diwashkarmacharya/"}
             aria-label="linkedin-link"
             target="_blank"
             rel="noopener noreferrer"
+            title="Linkedin"
           >
-            <FaLinkedin className="hover:text-slate-400" />
+            <FaLinkedin className=" hover:scale-125 transition-all transform hover:-translate-y-1 delay-150 " />
           </Link>
-
           <Link
-            href={"https://www.facebook.com/profile.php?id=61553923613595"}
-            aria-label="facebook-link"
+            href={"https://www.npmjs.com/~dwash-karma-org"}
+            aria-label="linkedin-link"
             target="_blank"
             rel="noopener noreferrer"
+            title="NPM"
           >
-            <FaFacebook className="hover:text-slate-400" />
+            <FaNpm className=" hover:scale-125 transition-all transform hover:-translate-y-1 delay-150 " />
           </Link>
-
           <Link
-            href={"https://www.instagram.com/dwashkarma/"}
-            aria-label="instagram-link"
+            href={"https://medium.com/@dwashkarma"}
+            aria-label="linkedin-link"
             target="_blank"
             rel="noopener noreferrer"
+            title="Medium"
           >
-            <FaInstagram className="hover:text-slate-400" />
+            <FaMediumM
+              className=" hover:scale-125 transition-all transform
+            hover:-translate-y-1 delay-150 "
+            />
           </Link>
         </div>
         <div>

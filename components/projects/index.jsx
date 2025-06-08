@@ -66,7 +66,7 @@ function Projects() {
       <h2 className="text-3xl font-bold text-textSecondary uppercase text-center">
         Projects
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 mx-10 md:mx-20 lg:mx-40">
+      <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-4  gap-4 mx-10 md:mx-20 lg:mx-40">
         {projects.map((item, index) => {
           return (
             <CardComponent
