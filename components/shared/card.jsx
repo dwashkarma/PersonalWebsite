@@ -24,7 +24,7 @@ function CardComponent({ image, title, description, url }) {
           src={image}
           height={300}
           width={300}
-          className="object-contain transition-transform duration-300 group-hover:scale-105"
+          className="object-contain transition-transform duration-300 group-hover:scale-105 aspect-square"
           loading="lazy"
           alt={title}
         />
