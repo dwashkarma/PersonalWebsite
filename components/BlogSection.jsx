@@ -9,6 +9,9 @@ const blogs = [
   {
     url: "https://medium.com/@dwashkarma/why-every-frontend-developer-should-master-technical-seo-my-journey-insights-d46be40de169",
   },
+  {
+    url: "https://medium.com/@dwashkarma/how-to-advance-technical-seo-as-a-developer-2d478bd5654d?source=friends_link&sk=8c10dfd66fac1ced52f3b0801c2bf2f3",
+  },
 ];
 
 export default function BlogSection() {
