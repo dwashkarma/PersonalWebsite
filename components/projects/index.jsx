@@ -10,6 +10,13 @@ const projects = [
     url: "https://play.google.com/store/apps/details?id=com.dwashkarma.kamkaaz",
   },
   {
+    title: "App Launcher - NPM Library",
+    image: "/Npm-logo.svg",
+    description:
+      "A React-based app launcher component available as an npm package and also via CDN for easy integration in any web page.",
+    url: "https://www.npmjs.com/package/app-launcher-karma",
+  },
+  {
     title: "KYC - Naasa Securities",
     image: "/naasa-logo.png",
     description:
@@ -51,13 +58,6 @@ const projects = [
       "Learning Management System for Kathmandu Institute of Child Health - KIOCH.",
     url: "https://learning-ms.vercel.app/",
   },
-  {
-    title: "Tron UI - NPM Library",
-    image: "/Npm-logo.svg",
-    description:
-      "Tron-UI is an open source react component library that implements new design's. It's comprehensive and can be used in production out of the box. ",
-    url: "https://www.npmjs.com/package/tron-ui",
-  },
 ];
 function Projects() {
   return (
@@ -73,7 +73,10 @@ function Projects() {
               key={index}
               title={item.title}
               image={item.image}
-              description={item.description.slice(0, 50) + "..."}
+              description={
+                item.description.slice(0, 150) +
+                (item.description.length > 150 ? "..." : "")
+              }
               url={item.url}
             />
           );
